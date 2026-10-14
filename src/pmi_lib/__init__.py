@@ -64,7 +64,7 @@ def read_dicom(file_path):
         spacing.append(float(s))
     spacing = tuple(spacing)
 
-    if len(sorted_images) == 1:                     # for a single file: 2D array, matching the 2D spacing
+    if len(sorted_images) == 1:                     # for a single file: 2D array, matching the 2D spacing.
         return sorted_images[0], spacing
 
     return np.array(sorted_images), spacing         # for multiple slices, a 3D numpy array with axes
