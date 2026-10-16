@@ -134,7 +134,7 @@ def _masked_gaussian_filter(pixel_data, mask, sigma) -> np.ndarray:
     out = np.nan_to_num(out, nan=0.0, posinf=0.0, neginf=0.0)  # Switches nan and inf for zeroes
     return out
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def _test (file_path):
     #Test the read_dicom function
@@ -159,3 +159,8 @@ def _test (file_path):
     dicom_to_nifti(file_path, nifti_path)
     nifti_image, nifti_spacing = read_nifti(nifti_path)
     view(nifti_image)
+
+# actually run the stuff
+if __name__ == "__main__":
+    print("Please enter the path to a DICOM image / DICOM images.")
+    _test(input().strip())
