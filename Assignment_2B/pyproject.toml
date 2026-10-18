@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pmi-lib-2b-wip"
+version = "0.0.1"
+description = "Standalone working script for PMI Assignment 2B"
+readme = "README.md"
+requires-python = ">=3.14"
+license = { file = "LICENSE.md" }
+dependencies = [
+    "click",
+    "nibabel",
+    "numpy",
+    "pydicom>=3.0",
+    "scipy",
+    "pmi-viewer",
+    "pylibjpeg",
+    "pylibjpeg-libjpeg",
+]
+
+[project.scripts]
+dicom-to-nifti-2b = "Assignment_2B.cli:dicom_to_nifti"
+
+[tool.setuptools]
+packages = ["Assignment_2B"]
+package-dir = { Assignment_2B = "." }
+py-modules = ["functions"]
