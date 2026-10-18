@@ -1,0 +1,9 @@
+# Local interpreter, editor settings, and generated package artifacts.
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+outputs/
