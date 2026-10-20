@@ -7,9 +7,10 @@ This is the project template for the library that you will build during the grou
 
 This project template contains a directory `src/pmi_lib/`. This directory is the actual Python package, in which you'll be adding new modules.
 
-The file `pyproject.toml` is the project configuration. It contains e.g. information about the package, about the dependencies, and about the authors. You'll need to make some changes in here.
+The file `pyproject.toml` is the project configuration. It contains e.g. information about the package, about the dependencies, and about the authors.
+You'll need to **make changes** in here! Update the **list with dependencies** when needed!
 
-`README.md` is this file. Replace all this information and describe your library. A Markdown file (`.md`) is a text file with a simple [markup syntax](https://www.markdownguide.org/basic-syntax/).
+`README.md` is this file. Replace all this information and **describe your library**. A Markdown file (`.md`) is a text file with a simple [markup syntax](https://www.markdownguide.org/basic-syntax/).
 
 The files `setup.py` and `MANIFEST.in` should **not** be changed. The file `setup.py` is a script for building code that we'll add in the second group assignment.
 
@@ -26,6 +27,26 @@ project/
 ├── setup.py
 ├── MANIFEST.in
 └── LICENSE.md
+```
+
+
+## Building
+
+The project can be build and installed in *editable* mode using the following terminal command:
+
+```console
+python -m pip install -e .
+```
+
+This will automatically install the package dependencies defined in `pyproject.toml`.
+
+
+## Usage
+
+Once the package is built and installed, the package can be imported in Python:
+
+```python
+import pmi_lib
 ```
 
 
