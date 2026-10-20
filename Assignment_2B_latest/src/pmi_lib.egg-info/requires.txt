@@ -1,0 +1,8 @@
+nibabel
+numpy
+pydicom
+scipy
+pmi-viewer
+click
+pylibjpeg
+pylibjpeg-libjpeg
