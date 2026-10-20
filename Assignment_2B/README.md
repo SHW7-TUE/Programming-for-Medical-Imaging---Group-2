@@ -1,83 +1,55 @@
-# Assignment 2B — work in progress
+# PMI lib
 
-This is a standalone working copy of the combined Assignment 2A/2B script.
-It contains the `Image` class, DICOM and NIfTI functions, and the masked
-Gaussian filter. Image data and spacing use `(row, column[, slice])` order;
-Gaussian sigma is specified in millimetres.
+This is the project template for the library that you will build during the group assignments.
 
-The script uses the same simplified NIfTI geometry as Assignment 2A. This is
-not yet the final group package: for example, the `DicomImage` subclass and
-the other group members' parts are still to be integrated.
 
-## Set up
+## Project Template Layout
 
-From this directory, create a Python 3.14 virtual environment and install the
-project and its dependencies:
+This project template contains a directory `src/pmi_lib/`. This directory is the actual Python package, in which you'll be adding new modules.
 
-```sh
-python3.14 -m venv .venv
-.venv/bin/python -m pip install -e .
+The file `pyproject.toml` is the project configuration. It contains e.g. information about the package, about the dependencies, and about the authors.
+You'll need to **make changes** in here! Update the **list with dependencies** when needed!
+
+`README.md` is this file. Replace all this information and **describe your library**. A Markdown file (`.md`) is a text file with a simple [markup syntax](https://www.markdownguide.org/basic-syntax/).
+
+The files `setup.py` and `MANIFEST.in` should **not** be changed. The file `setup.py` is a script for building code that we'll add in the second group assignment.
+
+Finally, `LICENSE.md` contains the license. It contains the terms of use for this template.
+
+```
+project/
+├── src/
+│   └── pmi_lib/
+│       ├── __init__.py
+│       └── ...
+├── pyproject.toml
+├── README.md
+├── setup.py
+├── MANIFEST.in
+└── LICENSE.md
 ```
 
-On Windows, use `py -3.14 -m venv .venv` and
-`.venv\Scripts\python -m pip install -e .` instead. The JPEG decoder is
-included for the supplied compressed DICOM images. For the commands below on
-Windows, replace `.venv/bin/python` with `.venv\Scripts\python`.
 
-On Debian/Ubuntu, if creating the environment reports that `ensurepip` is
-unavailable, install the matching Python venv package first (for example,
-`sudo apt install python3.14-venv`), then retry the commands above.
+## Building
 
-For now the project can also be installed into the existing 2A environment.
-From the PMI root directory, run:
+The project can be build and installed in *editable* mode using the following terminal command:
 
-```sh
-Assignment_2A/.venv/bin/python -m pip install -e Assignment_2B
+```console
+python -m pip install -e .
 ```
 
-This makes both commands available in that environment: `dicom-to-nifti`
-uses 2A, and `dicom-to-nifti-2b` uses 2B. In Bash, run `hash -r` if the shell
-does not immediately find a newly installed command.
+This will automatically install the package dependencies defined in `pyproject.toml`.
 
-When importing the 2B functions in Python, use `Assignment_2B.functions` so
-they are clearly distinguished from the separate 2A working script.
 
-## Run and test
+## Usage
 
-To convert a DICOM file or series without running the demonstration, use the
-2B command. For example, from this directory with its environment active:
+Once the package is built and installed, the package can be imported in Python:
 
-```sh
-dicom-to-nifti-2b --help
-dicom-to-nifti-2b ../documents/images/ct_jaw_slice.dcm outputs/jaw_slice.nii.gz
+```python
+import pmi_lib
 ```
 
-The output directory must already exist. The command writes one NIfTI file; it
-does not run the Gaussian filter or open the viewer. Choose an output filename
-that you are happy to replace if it already exists.
 
-Run the demonstration and enter the path to a DICOM file or a directory
-containing one DICOM series when prompted:
+## License
 
-```sh
-.venv/bin/python functions.py
-```
-
-For example, from this directory, enter `../documents/images/ct_jaw_slice.dcm`
-for the supplied slice or `../documents/images/ct_jaw` for the series. The
-script checks the NIfTI round trip and the DICOM conversion, then opens the
-original and filtered images in the viewer. The viewer needs a graphical
-desktop; its windows open one after the other.
-
-The two NIfTI files are saved under `outputs/`, named after the input. Running
-the demonstration again with the same input replaces those files. The filtered
-image is displayed but is not saved.
-
-Run the independent synthetic tests with:
-
-```sh
-.venv/bin/python -m unittest discover -s tests -t . -v
-```
-
-The tests use temporary DICOM and NIfTI files and mock the graphical viewer,
-so the course data and a desktop are not needed to run them.
+`pmi-lib` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

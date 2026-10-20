@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: pmi-lib
+Version: 0.0.1
+Summary: PMI library - Group 2
+Author-email: Lucia van den Boogaart <l.vandenboogaart@students.uu.nl>, Werner Huiskes <w.huiskes@students.uu.nl>, Soufyen Farhosh <s.h.w.farhosh@students.uu.nl>, Daphne Ploeg <d.ploeg1@students.uu.nl>
+License-Expression: MIT
+Requires-Python: >=3.14
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: nibabel
+Requires-Dist: numpy
+Requires-Dist: pydicom
+Requires-Dist: scipy
+Requires-Dist: pmi-viewer
+Requires-Dist: click
+Requires-Dist: pylibjpeg
+Requires-Dist: pylibjpeg-libjpeg
+Dynamic: license-file
+
+# PMI lib
+
+This is the project template for the library that you will build during the group assignments.
+
+
+## Project Template Layout
+
+This project template contains a directory `src/pmi_lib/`. This directory is the actual Python package, in which you'll be adding new modules.
+
+The file `pyproject.toml` is the project configuration. It contains e.g. information about the package, about the dependencies, and about the authors.
+You'll need to **make changes** in here! Update the **list with dependencies** when needed!
+
+`README.md` is this file. Replace all this information and **describe your library**. A Markdown file (`.md`) is a text file with a simple [markup syntax](https://www.markdownguide.org/basic-syntax/).
+
+The files `setup.py` and `MANIFEST.in` should **not** be changed. The file `setup.py` is a script for building code that we'll add in the second group assignment.
+
+Finally, `LICENSE.md` contains the license. It contains the terms of use for this template.
+
+```
+project/
+├── src/
+│   └── pmi_lib/
+│       ├── __init__.py
+│       └── ...
+├── pyproject.toml
+├── README.md
+├── setup.py
+├── MANIFEST.in
+└── LICENSE.md
+```
+
+
+## Building
+
+The project can be build and installed in *editable* mode using the following terminal command:
+
+```console
+python -m pip install -e .
+```
+
+This will automatically install the package dependencies defined in `pyproject.toml`.
+
+
+## Usage
+
+Once the package is built and installed, the package can be imported in Python:
+
+```python
+import pmi_lib
+```
+
+
+## License
+
+`pmi-lib` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
