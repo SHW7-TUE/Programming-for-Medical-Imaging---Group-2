@@ -10,6 +10,8 @@ from scipy.ndimage import gaussian_filter
 from pmi_viewer import view
 from typing import Any
 
+#Note: to view the DICOM images during the testing,
+#run this in the terminal: python -m pip install pylibjpeg pylibjpeg-libjpeg
 
 __all__ = ["dicom_to_nifti"]
 
