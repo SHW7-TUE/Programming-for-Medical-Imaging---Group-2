@@ -48,7 +48,10 @@ Once the package is built and installed, the package can be imported in Python:
 ```python
 import pmi_lib
 ```
+## Running the code
 
+1. Execute the script
+2. When prompted, provide the path to the DICOM file you want to run without the double quote
 
 ## License
 
