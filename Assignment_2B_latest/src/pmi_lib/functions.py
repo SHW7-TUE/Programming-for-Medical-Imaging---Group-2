@@ -47,6 +47,8 @@ class Image:
             raise ValueError("Voxel volume requires at least three dimensions.")
         return self.spacing[0] * self.spacing[1] * self.spacing[2]
 
+
+
 class DicomImage(Image):
     def __init__(self, data:np.ndarray, metadata: dict, spacing: tuple[float, ...] | None = None,):
         if not isinstance(metadata, dict):
